@@ -8,14 +8,18 @@ import { DataService } from '../../services/data.service';
 })
 export class PostsComponent implements OnInit {
 
+  mensajes: any;
+  // inyectamos el servicio que acabamos de hacer en data.service
   constructor( private dataService: DataService ) { }
 
   ngOnInit() {
 
-    this.dataService.getPost()
-    .subscribe (posts => {
-      console.log(posts);
-    });
-  }
+    //aqui es donde la pagina se carga por primeva vez
+    //llamamos el método que hay dentro de DataService
 
+    this.mensajes = this.dataService.getPosts();
+  }
+  escuchaClick (id: number) {
+    console.log('Click en: ', id);
+  }
 }
