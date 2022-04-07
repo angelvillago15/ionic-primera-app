@@ -42,16 +42,12 @@ export class Tab2Page implements OnInit {
         
           if ( articles.length === this.articles.length ) {
             this.infiniteScroll.disabled = true;
-            // event.target.disabled = true;
             return;
           }
 
-
           this.articles = articles;
           this.infiniteScroll.complete();
-          // event.target.complete();    
          
-
         })
 
       }
